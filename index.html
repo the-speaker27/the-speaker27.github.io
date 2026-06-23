@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Letter for Sadhna</title>
+    <!-- Google Fonts for premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Canvas for Floating Hearts & Confetti -->
+    <canvas id="canvas-hearts"></canvas>
+    <canvas id="canvas-confetti"></canvas>
+
+    <!-- Music Player Controller -->
+    <div class="music-controller" id="music-controller" style="display: none;">
+        <button id="music-toggle" aria-label="Toggle Music">
+            <span class="music-icon">🎵</span>
+            <span class="music-wave">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </button>
+    </div>
+
+    <!-- Hidden audio element for background music -->
+    <audio id="bg-music" loop preload="auto">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="app-container">
+        <!-- PAGE 1: Welcome Envelope -->
+        <section class="page active" id="page-welcome">
+            <div class="envelope-wrapper">
+                <div class="envelope" id="envelope">
+                    <div class="flap"></div>
+                    <div class="pocket"></div>
+                    <div class="letter-inside">
+                        <div class="heart-seal" id="heart-seal">
+                            <span class="heart-icon">❤️</span>
+                        </div>
+                        <p class="envelope-text-inside">Click the heart to open</p>
+                    </div>
+                </div>
+                <div class="welcome-text">
+                    <h1>For Sadhna</h1>
+                    <p class="subtitle">A gentleman's message inside...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 2: The Gentleman's Letter -->
+        <section class="page" id="page-letter">
+            <div class="glass-card letter-card">
+                <div class="card-header">
+                    <span class="gentleman-icon">🎩</span>
+                    <h2>A Letter to Sadhna</h2>
+                </div>
+                <div class="card-body">
+                    <p class="typewriter-text" id="typewriter-letter">
+                        Dear Sadhna,<br><br>
+                        From the moment our paths crossed, my world has changed in the most beautiful ways. Your laughter has a way of brightening even my darkest days, and your kindness inspires me to be a better person.<br><br>
+                        I wrote these pages just for you, hoping to express what words alone often fail to capture. Please take a small stroll with me through these pages...
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-gold btn-next" data-next="page-timeline">Walk with me →</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 3: Our Journey / Timeline -->
+        <section class="page" id="page-timeline">
+            <div class="glass-card timeline-card">
+                <div class="card-header">
+                    <h2>Our Journey</h2>
+                    <p class="subtitle">Beautiful chapters of my feelings for you</p>
+                </div>
+                <div class="card-body timeline-container">
+                    <div class="timeline-line"></div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-badge">✨</div>
+                        <div class="timeline-content">
+                            <h3>The Beginning</h3>
+                            <p>How it started: Just a casual conversation, but your spark caught my attention instantly.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-badge">💖</div>
+                        <div class="timeline-content">
+                            <h3>The Realization</h3>
+                            <p>When I realized: Every message from you brought a smile to my face, and hours started feeling like minutes.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-badge">🌹</div>
+                        <div class="timeline-content">
+                            <h3>The Connection</h3>
+                            <p>Where we stand: A beautiful bond built on respect, shared laughter, and understanding. You are my happy place.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer navigation-buttons">
+                    <button class="btn btn-outline btn-back" data-prev="page-letter">← Back</button>
+                    <button class="btn btn-gold btn-next" data-next="page-reasons">Look closer →</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 4: Reasons I Cherish You -->
+        <section class="page" id="page-reasons">
+            <div class="glass-card reasons-card">
+                <div class="card-header">
+                    <h2>5 Reasons I Cherish You</h2>
+                    <p class="subtitle">Click each card to reveal a secret</p>
+                </div>
+                <div class="card-body cards-grid">
+                    <!-- Reason Card 1 -->
+                    <div class="reason-card" onclick="flipCard(this)">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="reason-number">01</div>
+                                <h3>Your Smile</h3>
+                                <span class="click-hint">Click to flip</span>
+                            </div>
+                            <div class="card-back">
+                                <p>It has this magical warmth that immediately drives away any worry or stress. Seeing you happy is my favorite sight.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reason Card 2 -->
+                    <div class="reason-card" onclick="flipCard(this)">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="reason-number">02</div>
+                                <h3>Your Kindness</h3>
+                                <span class="click-hint">Click to flip</span>
+                            </div>
+                            <div class="card-back">
+                                <p>The pure, gentle way you care for the people and things around you. It shows how beautiful your soul is.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reason Card 3 -->
+                    <div class="reason-card" onclick="flipCard(this)">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="reason-number">03</div>
+                                <h3>Our Vibe</h3>
+                                <span class="click-hint">Click to flip</span>
+                            </div>
+                            <div class="card-back">
+                                <p>Whether we are talking about deep dreams or silly jokes, I can be completely myself with you. It feels like home.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reason Card 4 -->
+                    <div class="reason-card" onclick="flipCard(this)">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="reason-number">04</div>
+                                <h3>Your Grace</h3>
+                                <span class="click-hint">Click to flip</span>
+                            </div>
+                            <div class="card-back">
+                                <p>How you handle challenges with poise, strength, and integrity. You inspire me to grow every day.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reason Card 5 -->
+                    <div class="reason-card" onclick="flipCard(this)">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="reason-number">05</div>
+                                <h3>Just You</h3>
+                                <span class="click-hint">Click to flip</span>
+                            </div>
+                            <div class="card-back">
+                                <p>Because there is no one else like you, Sadhna. You are an extraordinary person, and I feel blessed to know you.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer navigation-buttons">
+                    <button class="btn btn-outline btn-back" data-prev="page-timeline">← Back</button>
+                    <button class="btn btn-gold btn-next" data-next="page-promises">My Promises →</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 5: Vows / Promises -->
+        <section class="page" id="page-promises">
+            <div class="glass-card promises-card">
+                <div class="card-header">
+                    <h2>A Gentleman's Promises</h2>
+                    <p class="subtitle">My vows to you, Sadhna</p>
+                </div>
+                <div class="card-body promises-list">
+                    <div class="promise-item">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="promise-1" checked disabled>
+                            <label for="promise-1" class="custom-checkbox">❤️</label>
+                        </div>
+                        <p>To always respect your individuality, your dreams, and your choices.</p>
+                    </div>
+                    <div class="promise-item">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="promise-2" checked disabled>
+                            <label for="promise-2" class="custom-checkbox">❤️</label>
+                        </div>
+                        <p>To be your listener in silence, your partner in adventure, and your strength in adversity.</p>
+                    </div>
+                    <div class="promise-item">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="promise-3" checked disabled>
+                            <label for="promise-3" class="custom-checkbox">❤️</label>
+                        </div>
+                        <p>To fill your days with small gestures of care, respect, and deep sincerity.</p>
+                    </div>
+                    <div class="promise-item">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="promise-4" checked disabled>
+                            <label for="promise-4" class="custom-checkbox">❤️</label>
+                        </div>
+                        <p>To stand by you, not in front or behind, but hand-in-hand as an equal partner.</p>
+                    </div>
+                </div>
+                <div class="card-footer navigation-buttons">
+                    <button class="btn btn-outline btn-back" data-prev="page-reasons">← Back</button>
+                    <button class="btn btn-rose btn-next" data-next="page-proposal">The Question →</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 6: The Proposal -->
+        <section class="page" id="page-proposal">
+            <!-- Normal Proposal Screen -->
+            <div class="glass-card proposal-card" id="proposal-box">
+                <div class="proposal-visual">
+                    <div class="rose-flower">🌹</div>
+                </div>
+                <div class="card-header">
+                    <p class="proposal-date">14th February</p>
+                    <h2>Dear Sadhna,</h2>
+                    <p class="proposal-question">Will you make me the happiest man and be my Valentine? ❤️</p>
+                </div>
+                <div class="proposal-buttons">
+                    <button class="btn btn-yes" id="btn-yes">Yes, I will! ❤️</button>
+                    <button class="btn btn-no" id="btn-no">No 💔</button>
+                </div>
+            </div>
+
+            <!-- Joyful Success Screen (Hidden initially) -->
+            <div class="glass-card success-card" id="success-box" style="display: none;">
+                <div class="success-hearts">🎉 💖 ✨</div>
+                <h2>She Said Yes!</h2>
+                <p class="success-message">
+                    My heart is full of joy! Thank you for choosing me, Sadhna.<br>
+                    I promise to make every day feel like Valentine's Day for us.
+                </p>
+                <div class="couple-signature">
+                    <span>Subham</span>
+                    <span class="heart-pulse">❤️</span>
+                    <span>Sadhna</span>
+                </div>
+                <div class="whatsapp-btn-wrapper">
+                    <!-- WhatsApp Redirect Button -->
+                    <a href="#" id="whatsapp-link" target="_blank" class="btn btn-whatsapp">
+                        <span class="wa-icon">💬</span> Tell Subham Yes!
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Navigation dots at the bottom -->
+    <div class="dots-navigation" id="dots-nav" style="display: none;">
+        <span class="dot" data-target="page-letter"></span>
+        <span class="dot" data-target="page-timeline"></span>
+        <span class="dot" data-target="page-reasons"></span>
+        <span class="dot" data-target="page-promises"></span>
+        <span class="dot" data-target="page-proposal"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

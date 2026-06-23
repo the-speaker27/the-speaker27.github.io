@@ -1,5 +1,5 @@
 /* ==========================================
-   ROMANTIC LOGIC AND EFFECTS FOR SADHNA & SUBHAM
+   ROMANTIC LOGIC AND EFFECTS FOR NEHA & SUBHAM
    ========================================== */
 
 // --- AUDIO SYSTEM (Web Audio API & Audio Element) ---
@@ -247,7 +247,7 @@ function openEnvelope() {
 }
 
 // --- TYPEWRITER EFFECT ---
-const letterText = `Dear Sadhna,
+const letterText = `Dear Neha,
 
 From the moment our paths crossed, my world has changed in the most beautiful ways. Your laughter has a way of brightening even my darkest days, and your kindness inspires me to be a better person.
 

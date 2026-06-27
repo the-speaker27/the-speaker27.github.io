@@ -1,5 +1,5 @@
 /* ==========================================
-   ROMANTIC LOGIC AND EFFECTS FOR NEHA & SUBHAM
+   ROMANTIC LOGIC AND EFFECTS FOR TAPASYA & SUBHAM
    ========================================== */
 
 // --- AUDIO SYSTEM (Web Audio API & Audio Element) ---
@@ -247,7 +247,7 @@ function openEnvelope() {
 }
 
 // --- TYPEWRITER EFFECT ---
-const letterText = `Dear Neha,
+const letterText = `Dear Tapasya,
 
 From the moment our paths crossed, my world has changed in the most beautiful ways. Your laughter has a way of brightening even my darkest days, and your kindness inspires me to be a better person.
 
@@ -612,7 +612,7 @@ btnYes.addEventListener('click', () => {
     
     // Dynamic WhatsApp Link generation
     const subhamNumber = ""; // User can add phone number if desired, otherwise standard share link
-    const waText = "Yes Subham! I read your beautiful letter, and I accept your proposal! I would love to be your Valentine! ❤️🌹";
+    const waText = "Yes Subham! I read your beautiful letter, and I accept your proposal! I would love to marry you and spend my life with you! ❤️💍";
     whatsappLink.href = `https://api.whatsapp.com/send?text=${encodeURIComponent(waText)}`;
     
     // Play celebratory sound progression
